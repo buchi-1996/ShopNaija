@@ -124,15 +124,15 @@ const useStyles = makeStyles((theme) => ({
 
 
 const drawerOptions = [
-  { text: 'Performance', icon: <Dashboard />, path: '/men' },
-  { text: 'Crashlytics', icon: <SettingsApplications /> },
-  { text: 'Authentication', icon: <People /> },
-  { text: 'Database', icon: <DnsRounded /> },
+  { text: 'Men', icon: <Dashboard />, path: '/men' },
+  { text: 'Women', icon: <SettingsApplications /> },
+  { text: 'Children', icon: <People /> },
+  { text: 'Premium', icon: <DnsRounded /> },
   { text: 'Storage', icon: <PermMediaOutlined /> },
   { text: 'Hosting', icon: <Public /> },
   { text: 'Functions', icon: <SettingsEthernet /> },
   { text: 'ML Kits', icon: <SettingsInputComponent /> },
-  { text: 'Test Lab', icon: <PhonelinkSetup /> },
+  { text: 'Testing', icon: <PhonelinkSetup /> },
   { text: 'Authentication', icon: <People /> },
   { text: 'Database', icon: <DnsRounded /> },
   { text: 'Storage', icon: <PermMediaOutlined /> },

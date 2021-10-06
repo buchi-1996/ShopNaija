@@ -93,7 +93,7 @@ const ProductCard = () => {
               </div>
                 
               <div style={{ marginRight: '10px' }}>
-                <Typography variant="h5">${price}</Typography>
+                <Typography variant="h5">${Math.round(price)}</Typography>
               </div>
             </CardActions>
           </Card>

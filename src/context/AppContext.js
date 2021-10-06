@@ -10,6 +10,7 @@ const AppContext = ({children}) => {
         modal: false,
         // shoppingCart: JSON.parse(localStorage.getItem('count'))   || 0 ,
         inCart: JSON.parse(localStorage.getItem('cartItems')) || [],
+        inCartProducts: [],
         products: [],
         darkMode: false,
         modalPreview: null
@@ -29,12 +30,26 @@ const AppContext = ({children}) => {
         const  products = await response.json();
         dispatch({type: 'GET_PRODUCTS', payload: products});
         dispatch({type: 'REMOVE_LOADER'})
+        console.log(products)
 
     };
 
     // call only once after app loads
     useEffect(() => {
         getProducts()
+    }, [])
+
+    const getCartProducts = async () => {
+        const response =  await fetch('https://fakestoreapi.com/products/');
+        const  products = await response.json();
+        dispatch({type: 'GET_CART_PRODUCTS', payload: products});
+        console.log(products)
+
+    };
+
+    // call only once after app loads
+    useEffect(() => {
+        getCartProducts()
     }, [])
 
     const toggleDrawer = () => {
