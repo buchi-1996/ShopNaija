@@ -13,7 +13,8 @@ const AppContext = ({children}) => {
         inCartProducts: [],
         products: [],
         darkMode: false,
-        modalPreview: null
+        modalPreview: null,
+        total: 0
     }
 
     // Gives Access to the State and Also Sets the State Using dispatch
@@ -21,9 +22,12 @@ const AppContext = ({children}) => {
 
     // when ever ShppingCart is modified setItem to local storage
     useEffect(() => {
+        dispatch({type: 'GET_TOTALS'})
         localStorage.setItem('cartItems', JSON.stringify(state.inCart))
     }, [state.inCart]);
 
+
+   
     // Fetch Products from fake Api and Store in Products Array
     const getProducts = async () => {
         const response =  await fetch('https://fakestoreapi.com/products/');

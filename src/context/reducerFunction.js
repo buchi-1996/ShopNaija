@@ -69,7 +69,8 @@ const reducerFunction = (state, action) => {
 
                 return [...acc, item]
             
-            }, []).filter(item => item.qty !== 0)
+            }, []).filter(item => item.qty !== 0),
+            
         }
             
         case 'REMOVE_LOADER' : {
@@ -78,6 +79,20 @@ const reducerFunction = (state, action) => {
                 isLoading: false
             }
         }
+        case 'GET_TOTALS' : {
+            console.log('hello')
+            return {
+                ...state,
+                total: state.inCart.reduce((cartTotal, cartItem) => {
+                    const {price, qty} = cartItem;
+                    const itemTotal = price * qty
+                    cartTotal += itemTotal
+                   cartTotal =  parseFloat(Math.round(cartTotal))
+                    return cartTotal;
+                }, 0)
+            }
+        }
+
         default:
             return state
     }
