@@ -11,6 +11,7 @@ import MenClothing from './pages/MenClothing';
 // import AppState from './context/AppState';
 import SingleProduct from './pages/SingleProduct';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
 
 
 function App() {
@@ -32,6 +33,9 @@ function App() {
             </Route>
             <Route path="/cart">
               <Cart />
+            </Route>
+            <Route path="/checkout">
+              <Checkout />
             </Route>
           </Switch>
         </Router>
